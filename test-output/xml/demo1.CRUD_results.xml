@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="KeyedIN TestName"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="112.670">
+  <properties />
+  
+  
+            <testcase name="AddSalesOrder" time="36.181" classname="demo1.CRUD" />
+                <testcase name="DeleteSalesOrder" time="21.797" classname="demo1.CRUD" />
+                <testcase name="SearchSaleOrder" time="17.350" classname="demo1.CRUD" />
+                <testcase name="EditSalesOrder" time="19.902" classname="demo1.CRUD" />
+                <testcase name="ViewSalesOrder" time="17.440" classname="demo1.CRUD" />
+      
+</testsuite>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test-suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="demo1.AddSaleOrder">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- demo1.AddSaleOrder -->
+      <class name="demo1.NewTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="main"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- demo1.NewTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Test-suite] -->

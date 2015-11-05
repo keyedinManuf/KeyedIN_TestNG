@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>TestNG:  TestNG</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TestNG</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/6</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Nov 03 18:49:33 IST 2015</td>
+</tr>
+<tr><td>Total time:</td><td>17 seconds (17836 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='demo1.AddSaleOrder.beforeTest()'><b>beforeTest</b><br>Test class: demo1.AddSaleOrder</td>
+<td><div><pre>org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 29 milliseconds
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:59:12&apos;
+System info: host: &apos;sakthivel-PC&apos;, ip: &apos;172.16.11.74&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
+Session ID: 88683e00-3a74-467c-aa5c-172a42c4ba9c
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=32.0.3}]
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteTimeouts.pageLoadTimeout(RemoteWebDriver.java:841)
+	at demo1.CRUD.beforeTest(CRUD.java:111)
+Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:59:12&apos;
+System info: host: &apos;sakthivel-PC&apos;, ip: &apos;172.16.11.74&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12602)
+	at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9455)
+	at &lt;anonymous class&gt;.Resource.prototype.handle(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9602)
+	at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9549)
+	at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12390)
+	at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+	at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+	at &lt;anonymous class&gt;.Connection.prototype.process(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+	at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+	at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+	at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace16035614", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace16035614'><pre>org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 29 milliseconds
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:59:12&apos;
+System info: host: &apos;sakthivel-PC&apos;, ip: &apos;172.16.11.74&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
+Session ID: 88683e00-3a74-467c-aa5c-172a42c4ba9c
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{platform=WINDOWS, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=32.0.3}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteTimeouts.pageLoadTimeout(RemoteWebDriver.java:841)
+	at demo1.CRUD.beforeTest(CRUD.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
+Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd&apos;, time: &apos;2015-10-09 19:59:12&apos;
+System info: host: &apos;sakthivel-PC&apos;, ip: &apos;172.16.11.74&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_40&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12602)
+	at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9455)
+	at &lt;anonymous class&gt;.Resource.prototype.handle(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9602)
+	at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9549)
+	at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12390)
+	at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+	at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+	at &lt;anonymous class&gt;.Connection.prototype.process(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+	at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+	at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+	at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///C:/Users/SAKTHI~1/AppData/Local/Temp/anonymous1590644507558857083webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='demo1.AddSaleOrder.afterMethod()'><b>afterMethod</b><br>Test class: demo1.AddSaleOrder</td>
+<td></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='demo1.AddSaleOrder.afterTest()'><b>afterTest</b><br>Test class: demo1.AddSaleOrder</td>
+<td></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='demo1.CRUD.AddSalesOrder()'><b>AddSalesOrder</b><br>Test class: demo1.CRUD</td>
+<td></td>
+<td>0</td>
+<td>demo1.CRUD@18c5c12</td></tr>
+<tr>
+<td title='demo1.CRUD.EditSalesOrder()'><b>EditSalesOrder</b><br>Test class: demo1.CRUD</td>
+<td></td>
+<td>0</td>
+<td>demo1.CRUD@18c5c12</td></tr>
+<tr>
+<td title='demo1.AddSaleOrder.SalesReport()'><b>SalesReport</b><br>Test class: demo1.AddSaleOrder</td>
+<td></td>
+<td>0</td>
+<td>demo1.AddSaleOrder@1f0a8b0</td></tr>
+<tr>
+<td title='demo1.CRUD.SearchSaleOrder()'><b>SearchSaleOrder</b><br>Test class: demo1.CRUD</td>
+<td></td>
+<td>0</td>
+<td>demo1.CRUD@18c5c12</td></tr>
+<tr>
+<td title='demo1.AddSaleOrder.function()'><b>function</b><br>Test class: demo1.AddSaleOrder</td>
+<td></td>
+<td>0</td>
+<td>demo1.AddSaleOrder@1f0a8b0</td></tr>
+<tr>
+<td title='demo1.AddSaleOrder.salesorderack()'><b>salesorderack</b><br>Test class: demo1.AddSaleOrder</td>
+<td></td>
+<td>0</td>
+<td>demo1.AddSaleOrder@1f0a8b0</td></tr>
+</table><p>
+</body>
+</html>

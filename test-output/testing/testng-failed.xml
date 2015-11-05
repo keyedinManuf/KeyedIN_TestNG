@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testing]">
+  <test name="TestNG(failed)">
+    <classes>
+      <class name="demo1.AddSaleOrder">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="salesorderack"/>
+          <include name="SalesReport"/>
+          <include name="function"/>
+        </methods>
+      </class> <!-- demo1.AddSaleOrder -->
+      <class name="demo1.CRUD">
+        <methods>
+          <include name="EditSalesOrder"/>
+          <include name="beforeTest"/>
+          <include name="SearchSaleOrder"/>
+          <include name="AddSalesOrder"/>
+        </methods>
+      </class> <!-- demo1.CRUD -->
+    </classes>
+  </test> <!-- TestNG(failed) -->
+</suite> <!-- Failed suite [testing] -->

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CRUDOperation]">
+  <test name="TestNG(failed)">
+    <classes>
+      <class name="demo1.loginpage">
+        <methods>
+          <include name="beforetest"/>
+        </methods>
+      </class> <!-- demo1.loginpage -->
+      <class name="demo1.CRUD">
+        <methods>
+          <include name="EditSalesOrder"/>
+          <include name="DeleteSalesOrder"/>
+          <include name="beforeTest"/>
+          <include name="SearchSaleOrder"/>
+          <include name="AddSalesOrder"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- demo1.CRUD -->
+    </classes>
+  </test> <!-- TestNG(failed) -->
+</suite> <!-- Failed suite [CRUDOperation] -->
