@@ -39,6 +39,7 @@ public class CRUD {
 		dr.findElement(By.xpath("html/body/div[5]/div/input")).sendKeys("Test");
 		dr.findElement(By.xpath("html/body/div[5]/ul/li[2]/div")).click();
 		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[5]/div[1]/div/div/div[2]/div/div[1]/span/div/a/span[1]")).click();
+		Thread.sleep(1000);
 		dr.findElement(By.xpath("html/body/div[6]/div/input")).sendKeys("KI Bikes");
 		dr.findElement(By.xpath("html/body/div[6]/ul/li[1]/div")).click();
 		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[6]/div[1]/div/div/div[2]/div/div[1]/span/div/a/span[1]")).click();
@@ -103,10 +104,10 @@ public class CRUD {
 	  dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
 	  WebElement table = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table"));
 	  boolean verify =table.isDisplayed();
-	  System.out.println("Search result Table is Displayed:\n"+verify);
+	  System.out.println("Search result Table is Displayed:"+verify);
 	  Thread.sleep(10000);
 	  String Text = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[3]")).getText();
-	  System.out.println(Text);
+	  System.out.println("Search result:"+Text);
 	  if(!Text.equals(str)){
 		  System.out.print("Search fails\n");
 	  }else{
