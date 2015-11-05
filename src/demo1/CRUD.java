@@ -50,9 +50,7 @@ public class CRUD {
 		dr.findElement(By.xpath("html/body/div[8]/ul/li[1]/div")).click();
 		dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
 	dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	 WebElement orderno = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[1]/span"));
-		str =orderno.getText();
-		System.out.println("Created Sales order is :"+str);
+	 
 	  
 	  }	
   catch(Exception e){
@@ -74,21 +72,22 @@ public class CRUD {
 		  int Size=PartNumber.size();
 		  Random rand = new Random(System.currentTimeMillis());
 		  int rval = rand.nextInt(Size);
+		  Thread.sleep(3000);
 		  dr.findElement(By.xpath(s1+rval+s2)).click();
-		  dr.findElement(By.xpath(".//*[@id='select2-chosen-10']")).click();
-		  dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		  dr.findElement(By.xpath("html/body/div[6]/div/input")).sendKeys("123");
-		  List<WebElement> DDA = dr.findElements(By.xpath("html/body/div[6]/ul"));
-		  String s3="html/body/div[6]/ul/li[";
-		  String s4="]/div";
-		  int SizeDDA=DDA.size();
-		  Random randm = new Random(System.currentTimeMillis());
-		  int rval1 = randm.nextInt(SizeDDA);
-		  dr.findElement(By.xpath(s3+rval1+s4)).click();
+		  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[6]/div[1]/div/div/div[2]/div/div[1]/span/a[1]")).click();
+		  dr.switchTo().frame(0);
+		  dr.findElement(By.xpath("html/body/div/form/div[2]/div[2]/div[2]/ul/li[1]/span/div/a/span[1]")).click();
+		  List<WebElement> DDA = dr.findElements(By.xpath("html/body/div[3]/ul"));
+		  dr.findElement(By.xpath("html/body/div[3]/ul/li[1]/div")).click();
+		  dr.findElement(By.xpath(".//button[@class='btn btn-sm btn-default']")).click();
+		  dr.findElement(By.xpath("html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/a")).click();
 		  dr.findElement(By.id("Quantity")).sendKeys("10");
 		  dr.findElement(By.id("List_Price")).sendKeys("100");
 		  dr.findElement(By.id("Shipping_Charges")).sendKeys("12");
 		  dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
+		  WebElement orderno = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[1]/a"));
+			str =orderno.getText();
+			System.out.println("Created Sales order is :"+str);
 		 
 	  }catch(Exception e){
 		  throw e;
@@ -108,13 +107,13 @@ public class CRUD {
 	  Thread.sleep(10000);
 	  String Text = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[3]")).getText();
 	  System.out.println("Search result:"+Text);
-	  if(!Text.equals(str)){
+	  	if(!Text.equals(str)){
 		  System.out.print("Search fails\n");
-	  }else{
+	  	}else{
 		  System.out.print("Searching is done with the newly created Sales order\n");
-	  }
-	  dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	  }catch (Exception e){
+	  	}
+	  	dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	  	}catch (Exception e){
 		  throw e;
 	  }
 	  getScreenShot();
@@ -151,7 +150,7 @@ public class CRUD {
   dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
   dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
   dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
-  Thread.sleep(1000);
+  Thread.sleep(10000);
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[6]")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/ul/li[3]/a")).click();
   }catch (Exception e){
