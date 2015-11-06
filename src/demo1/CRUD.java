@@ -124,7 +124,7 @@ public class CRUD {
   public static void EditSalesOrder() throws Exception{
 	  try {
 	  System.out.println("------------------------------------------------");
-	  System.out.println("Scenario 3: Editing the newly added Sales Order");
+	  System.out.println("Scenario 4: Editing the newly added Sales Order");
 	  WebDriverWait wait = new WebDriverWait(dr,20);
 	  wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[2]/i")));
 	  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[2]/i")).click();
@@ -148,7 +148,7 @@ public class CRUD {
   public static void ViewSalesOrder() throws Exception{
   try{
   System.out.println("------------------------------------------------");
-  System.out.println("Scenario 4: View the Sales Order");
+  System.out.println("Scenario 5: View the Sales Order");
   dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
   dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
   dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
@@ -165,7 +165,7 @@ public class CRUD {
   public static void DeleteSalesOrder() throws Exception{
   try{
   System.out.println("------------------------------------------------");
-  System.out.println("Scenario 5: Deleting the Sales Order");
+  System.out.println("Scenario 6: Deleting the Sales Order");
   dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
   dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
   dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
@@ -182,7 +182,7 @@ public class CRUD {
   @Test (enabled=true,groups = "Mygroup_2", priority = 6)
   public static void SaleOrderACK() throws InterruptedException, IOException {
 	  System.out.println("------------------------------------------------");
-	  System.out.println("Scenario 6: Sales order Acknowledgement");
+	  System.out.println("Scenario 7: Sales order Acknowledgement");
 	  	dr.findElement(By.xpath("html/body/div[1]/ul[2]/li[2]/div/a")).click();
 		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[2]/div/ul/li[1]/ul/li[2]/div[1]/a[3]")).click();
 		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[2]/div/ul/li[1]/ul/li[1]/ul/li[2]/div[1]/a[3]")).click();
@@ -204,7 +204,7 @@ public class CRUD {
   @Test (enabled=true,groups = "Mygroup_2", priority=7)
   public void SalesOrderListing() throws InterruptedException, AWTException, IOException {
 	  System.out.println("------------------------------------------------");
-	  System.out.println("Scenario 7: Sales order Listing");
+	  System.out.println("Scenario 8: Sales order Listing");
 	  	dr.findElement(By.xpath(".//span[@class='k-icon k-icon-clipboard']")).click();
 		dr.findElement(By.xpath(".//*[@id='main']/div/div[1]/div[2]/div/ul/li[1]/ul/li[2]/div[1]/a[3]")).click();
 		dr.findElement(By.xpath(".//*[@id='main']/div/div[1]/div[2]/div/ul/li[1]/ul/li[1]/ul/li[1]/div[1]/a[3]")).click();
