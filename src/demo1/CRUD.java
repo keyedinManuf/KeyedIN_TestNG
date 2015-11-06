@@ -49,8 +49,8 @@ public class CRUD {
 		dr.findElement(By.xpath("html/body/div[8]/div/input")).sendKeys("Mark B");
 		dr.findElement(By.xpath("html/body/div[8]/ul/li[1]/div")).click();
 		dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
-	dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	 
+		dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		System.out.println("Sales Order is created succefully");
 	  
 	  }	
   catch(Exception e){
@@ -98,7 +98,7 @@ public class CRUD {
   public static void SearchSaleOrder() throws Exception{
 	  try{
 	  System.out.println("------------------------------------------------");
-	  System.out.println("Scenario 2: Searching the newly created Sales Order");
+	  System.out.println("Scenario 3: Searching the newly created Sales Order");
 	  dr.findElement(By.xpath(".//span[@class='k-icon k-icon-clipboard']")).click();
 	  dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
 	  dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
@@ -155,6 +155,7 @@ public class CRUD {
   Thread.sleep(10000);
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[6]")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/ul/li[3]/a")).click();
+  System.out.println("Edited Sales order is viewed succesfully");
   }catch (Exception e){
   throw e;
   }
@@ -172,6 +173,7 @@ public class CRUD {
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[6]")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/div[2]/ul/li[5]/a")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[3]/div/button[1]")).click();
+  System.out.println("Deleted the newly created Sales order succesfully");
   }catch (Exception e){
   throw e;
   }
@@ -232,8 +234,7 @@ public class CRUD {
 		object.keyRelease(KeyEvent.VK_ALT);
 		System.out.println("Sales order delivery listing done Succesfully");
 		System.out.println("------------------------------------------------");
-		 dr.close();
-		 getScreenShot();
+		getScreenShot();
   }
   
   public static void getScreenShot() throws IOException{

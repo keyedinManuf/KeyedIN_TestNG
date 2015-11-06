@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="KeyedIN TestName"
-           tests="6"
+<testsuite name="KeyedIN Test"
+           tests="8"
            failures="0"
            errors="0"
            skipped="0"
-           time="166.899">
+           time="216.443">
   <properties />
   
   
-            <testcase name="AddNewSOitem" time="46.669" classname="demo1.CRUD" />
-                <testcase name="EditSalesOrder" time="14.781" classname="demo1.CRUD" />
-                <testcase name="DeleteSalesOrder" time="14.971" classname="demo1.CRUD" />
-                <testcase name="SearchSaleOrder" time="27.276" classname="demo1.CRUD" />
-                <testcase name="AddSalesOrder" time="34.722" classname="demo1.CRUD" />
-                <testcase name="ViewSalesOrder" time="28.480" classname="demo1.CRUD" />
+            <testcase name="DeleteSalesOrder" time="16.151" classname="demo1.CRUD" />
+                <testcase name="AddNewSOitem" time="48.891" classname="demo1.CRUD" />
+                <testcase name="ViewSalesOrder" time="29.181" classname="demo1.CRUD" />
+                <testcase name="AddSalesOrder" time="24.191" classname="demo1.CRUD" />
+                <testcase name="SearchSaleOrder" time="31.862" classname="demo1.CRUD" />
+                <testcase name="SaleOrderACK" time="16.911" classname="demo1.CRUD" />
+                <testcase name="EditSalesOrder" time="21.791" classname="demo1.CRUD" />
+                <testcase name="SalesOrderListing" time="27.465" classname="demo1.CRUD" />
       
 </testsuite>

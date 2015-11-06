@@ -4,7 +4,7 @@
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
  </listeners>
-  <test name="KeyedIN TestName" >
+  <test name="KeyedIN Test" >
     <classes>
        <class name="demo1.CRUD">
         <methods>
@@ -14,7 +14,10 @@
         <include name="SearchSaleOrder"/>
         <include name="EditSalesOrder" />
         <include name="ViewSalesOrder" />
-        <include name="DeleteSalesOrder" /> 
+        <include name="DeleteSalesOrder" />
+        <include name="SaleOrderACK" />
+        <include name="SalesOrderListing" /> 
+        <include name="afterTest" />
         </methods>
        </class>
     </classes>
