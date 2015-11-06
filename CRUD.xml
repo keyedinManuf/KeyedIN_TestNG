@@ -10,6 +10,7 @@
         <methods>
         <include name="beforeTest" />
         <include name="AddSalesOrder" />
+        <include name="AddNewSOitem" />
         <include name="SearchSaleOrder"/>
         <include name="EditSalesOrder" />
         <include name="ViewSalesOrder" />

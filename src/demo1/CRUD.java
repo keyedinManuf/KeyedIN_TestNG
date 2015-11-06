@@ -58,7 +58,7 @@ public class CRUD {
 	  }
 	  getScreenShot();
   }
-  @Test(enabled=false, priority=1)
+  @Test(enabled=true, priority=1)
   public static void AddNewSOitem() throws Exception{
 	  try{
 		  System.out.println("------------------------------------------------");
@@ -92,12 +92,14 @@ public class CRUD {
 	  }catch(Exception e){
 		  throw e;
 	  }
+	  getScreenShot();
   }
-  @Test (enabled=true,priority =1)
+  @Test (enabled=true,priority =2)
   public static void SearchSaleOrder() throws Exception{
 	  try{
 	  System.out.println("------------------------------------------------");
 	  System.out.println("Scenario 2: Searching the newly created Sales Order");
+	  dr.findElement(By.xpath(".//span[@class='k-icon k-icon-clipboard']")).click();
 	  dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
 	  dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
 	  dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
@@ -118,7 +120,7 @@ public class CRUD {
 	  }
 	  getScreenShot();
   }
-  @Test (enabled=true, groups="Mygroup", priority =2)
+  @Test (enabled=true, groups="Mygroup", priority =3)
   public static void EditSalesOrder() throws Exception{
 	  try {
 	  System.out.println("------------------------------------------------");
@@ -142,7 +144,7 @@ public class CRUD {
   }
   
 
-  @Test (enabled=true,groups="Mygroup", priority=3)
+  @Test (enabled=true,groups="Mygroup", priority=4)
   public static void ViewSalesOrder() throws Exception{
   try{
   System.out.println("------------------------------------------------");
@@ -158,7 +160,7 @@ public class CRUD {
   }
   getScreenShot();
   }
-  @Test (enabled=true,groups="Mygroup", priority=4)
+  @Test (enabled=true,groups="Mygroup", priority=5)
   public static void DeleteSalesOrder() throws Exception{
   try{
   System.out.println("------------------------------------------------");
@@ -175,7 +177,7 @@ public class CRUD {
   }
   getScreenShot();
   }
-  @Test (enabled=true,groups = "Mygroup_2", priority = 5)
+  @Test (enabled=true,groups = "Mygroup_2", priority = 6)
   public static void SaleOrderACK() throws InterruptedException, IOException {
 	  System.out.println("------------------------------------------------");
 	  System.out.println("Scenario 6: Sales order Acknowledgement");
@@ -197,7 +199,7 @@ public class CRUD {
 		dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		getScreenShot();
  	  	}
-  @Test (enabled=true,groups = "Mygroup_2", priority=6)
+  @Test (enabled=true,groups = "Mygroup_2", priority=7)
   public void SalesOrderListing() throws InterruptedException, AWTException, IOException {
 	  System.out.println("------------------------------------------------");
 	  System.out.println("Scenario 7: Sales order Listing");
