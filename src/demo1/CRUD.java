@@ -64,7 +64,7 @@ public class CRUD {
 		  System.out.println("------------------------------------------------");
 		  System.out.println("Scenario 2: Adding new Sales Order item");
 		  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[1]/button[3]")).click();
-		  dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		  /*dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);*/
 		  dr.findElement(By.xpath(".//*[@id='s2id_autogen5']")).click();
 		  List<WebElement> PartNumber = dr.findElements(By.className("select2-results"));
 		  String s1="html/body/div[5]/ul/li[";
@@ -72,7 +72,7 @@ public class CRUD {
 		  int Size=PartNumber.size();
 		  Random rand = new Random(System.currentTimeMillis());
 		  int rval = rand.nextInt(Size);
-		  Thread.sleep(3000);
+		  TimeUnit.SECONDS.sleep(5);
 		  dr.findElement(By.xpath(s1+rval+s2)).click();
 		  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[6]/div[1]/div/div/div[2]/div/div[1]/span/a[1]")).click();
 		  dr.switchTo().frame(0);
@@ -81,6 +81,7 @@ public class CRUD {
 		  dr.findElement(By.xpath("html/body/div[3]/ul/li[1]/div")).click();
 		  dr.findElement(By.xpath(".//button[@class='btn btn-sm btn-default']")).click();
 		  dr.findElement(By.xpath("html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/a")).click();
+		  TimeUnit.SECONDS.sleep(5);
 		  dr.findElement(By.id("Quantity")).sendKeys("10");
 		  dr.findElement(By.id("List_Price")).sendKeys("100");
 		  dr.findElement(By.id("Shipping_Charges")).sendKeys("12");
@@ -106,7 +107,7 @@ public class CRUD {
 	  WebElement table = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table"));
 	  boolean verify =table.isDisplayed();
 	  System.out.println("Search result Table is Displayed:"+verify);
-	  Thread.sleep(10000);
+	  TimeUnit.SECONDS.sleep(4);
 	  String Text = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[3]")).getText();
 	  System.out.println("Search result:"+Text);
 	  	if(!Text.equals(str)){
@@ -133,6 +134,7 @@ public class CRUD {
 	  dr.findElement(By.xpath("html/body/div[5]/ul/li/div/span")).click();
 	  dr.findElement(By.xpath(".//span[@id='select2-chosen-10']")).click();
 	  dr.findElement(By.xpath("html/body/div[6]/div/input")).sendKeys("30 - Net 30 Days");
+	  TimeUnit.SECONDS.sleep(3);
 	  dr.findElement(By.xpath("html/body/div[6]/ul/li/div/span")).click();
 	  dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
 	  System.out.println("Editing done successfully");
@@ -152,7 +154,7 @@ public class CRUD {
   dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
   dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
   dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
-  Thread.sleep(10000);
+  TimeUnit.SECONDS.sleep(4);
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[6]")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/ul/li[3]/a")).click();
   System.out.println("Edited Sales order is viewed succesfully");
@@ -169,7 +171,7 @@ public class CRUD {
   dr.findElement(By.xpath(".//div[@data-label='Sales Orders']")).click();
   dr.findElement(By.xpath(".//input[@id='Name']")).sendKeys(str);
   dr.findElement(By.xpath(".//button[@data-label='Search']")).click();
-  Thread.sleep(1000);
+  TimeUnit.SECONDS.sleep(3);
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[6]")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[1]/td[1]/div[2]/ul/li[5]/a")).click();
   dr.findElement(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/form/div[3]/div/button[1]")).click();
@@ -220,9 +222,9 @@ public class CRUD {
 		int rval=rand.nextInt(Size)+4;
 //		System.out.println("R val is : "+rval);
 		dr.findElement(By.xpath(s1+rval+s2)).click();
-		FirefoxProfile prof = new FirefoxProfile();
-		prof.setPreference("browser.download.folderlist",0);
-		prof.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/csv");
+//		FirefoxProfile prof = new FirefoxProfile();
+//		prof.setPreference("browser.download.folderlist",0);
+//		prof.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/csv");
 		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[1]/div/a")).click();
 		Robot object = new Robot();
 		object.delay(3000);

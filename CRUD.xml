@@ -15,8 +15,8 @@
         <include name="EditSalesOrder" />
         <include name="ViewSalesOrder" />
         <include name="DeleteSalesOrder" />
-        <include name="SaleOrderACK" />
-        <include name="SalesOrderListing" /> 
+    	<include name="SaleOrderACK" />
+        <include name="SalesOrderListing" />
         <include name="afterTest" />
         </methods>
        </class>
