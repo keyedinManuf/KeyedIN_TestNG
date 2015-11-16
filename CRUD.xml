@@ -1,4 +1,3 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="KeyedIN Complete Suite for Sales Order" verbose="1" >
   <listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
@@ -15,8 +14,8 @@
         <include name="EditSalesOrder" />
         <include name="ViewSalesOrder" />
         <include name="DeleteSalesOrder" />
-    	<include name="SaleOrderACK" />
-        <include name="SalesOrderListing" />
+   <!-- 	<include name="SaleOrderACK" />
+        <include name="SalesOrderListing" /> -->
         <include name="afterTest" />
         </methods>
        </class>

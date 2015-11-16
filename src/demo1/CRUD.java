@@ -25,7 +25,7 @@ import org.testng.annotations.AfterTest;
 public class CRUD {
 	public static WebDriver dr= new FirefoxDriver();
 	public static String str;
-  @Test (priority =0)
+  @Test(priority =0)
   public void AddSalesOrder() throws Exception {
 	  try{
 	  	System.out.println("-------------CRUD Operation----------------");
@@ -80,9 +80,9 @@ public class CRUD {
 		  dr.findElement(By.xpath(".//button[@class='btn btn-sm btn-default']")).click();
 		  dr.findElement(By.xpath("html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/a")).click();
 		  TimeUnit.SECONDS.sleep(5);
-		  dr.findElement(By.id("Quantity")).sendKeys("10");
-		  dr.findElement(By.id("List_Price")).sendKeys("100");
-		  dr.findElement(By.id("Shipping_Charges")).sendKeys("12");
+		  dr.findElement(By.xpath(".//input[1][@id='Quantity']")).sendKeys("10");
+		  dr.findElement(By.xpath(".//input[1][@id='List_Price']")).sendKeys("100");
+		  dr.findElement(By.xpath(".//input[1][@id='Shipping_Charges']")).sendKeys("12");
 		  dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
 		  WebElement orderno = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[1]/a"));
 			str =orderno.getText();
