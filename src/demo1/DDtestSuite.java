@@ -25,7 +25,7 @@ public class DDtestSuite {
 		dr.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		dr.findElement(By.xpath(".//a[@title='Sales Orders']")).click();
 		dr.findElement(By.xpath(".//*[@id='main']/div/div[1]/div[2]/div/ul/li[1]/ul/li[1]/ul/li[1]/div[1]/a[3]")).click();
-		for(int i=1; i<=13; i++){
+		for(int i=1; i<=20; i++){
 		String Customer = DDwithPOI.GetExcelData(i, 0);
 		String SalesorderStatus = DDwithPOI.GetExcelData(i, 1);
 		String BusinessUnit = DDwithPOI.GetExcelData(i, 2);
@@ -48,7 +48,7 @@ public class DDtestSuite {
 				WebElement SOS =dr.findElement(By.xpath(".//*[@id='s2id_autogen4_search']"));
 				List<WebElement> option2=dr.findElements(By.xpath(".//*[@id='select2-results-4']"));
 				SOS.sendKeys(SalesorderStatus);
-				TimeUnit.SECONDS.sleep(5);
+				TimeUnit.SECONDS.sleep(3);
 				for(WebElement s1: option2){
 					String verify1= s1.getText();
 					SOS.sendKeys(Keys.ENTER);
