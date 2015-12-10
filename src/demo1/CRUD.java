@@ -10,17 +10,22 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
+
+import com.thoughtworks.selenium.webdriven.commands.KeyPressNative;
 
 public class CRUD {
 	public static WebDriver dr= new FirefoxDriver();
@@ -33,21 +38,26 @@ public class CRUD {
 	  	System.out.println("Sceario 1: Sales Order Creation");
 		dr.findElement(By.xpath(".//span[@class='k-icon k-icon-clipboard']")).click();
 		dr.findElement(By.xpath(".//a[@href='/Dev03/Form/Create/70']")).click();
-		dr.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[2]/div/div/div[2]/div/div[1]/span/div/a/span[1]")).click();
-		dr.findElement(By.xpath("html/body/div[5]/div/input")).sendKeys("Test");
-		dr.findElement(By.xpath("html/body/div[5]/ul/li[2]/div")).click();
-		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[5]/div[1]/div/div/div[2]/div/div[1]/span/div/a/span[1]")).click();
-		TimeUnit.SECONDS.sleep(2);
-		dr.findElement(By.xpath("html/body/div[6]/div/input")).sendKeys("KI Bikes");
-		dr.findElement(By.xpath("html/body/div[6]/ul/li[1]/div")).click();
-		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[6]/div[1]/div/div/div[2]/div/div[1]/span/div/a/span[1]")).click();
-		dr.findElement(By.xpath("html/body/div[7]/div/input")).sendKeys("CAD - Canadian Dollars");
-		dr.findElement(By.xpath("html/body/div[7]/ul/li[1]/div")).click();
-		dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[8]/div[2]/div/div/div[2]/div/div[1]/span/div/a/span[1]")).click();
-		dr.findElement(By.xpath("html/body/div[8]/div/input")).sendKeys("Mark B");
-		dr.findElement(By.xpath("html/body/div[8]/ul/li[1]/div")).click();
-		dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
+		dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		WebElement h=dr.findElement(By.xpath(".//*[@id='MainWrapper']/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[2]/div/div/div[2]/div/div[1]/span/a[1]"));
+		Actions act = new Actions(dr);
+		act.click(h).perform();
+		dr.switchTo().frame(0);
+		TimeUnit.SECONDS.sleep(5);
+		WebElement web=dr.findElement(By.xpath("html/body/div/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody"));
+		List<WebElement>Customers = dr.findElements(By.xpath("html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr"));
+		String s1="html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr[";
+		String s2="]/td[1]/a";
+		Random rand = new Random(System.currentTimeMillis());
+		int rval= rand.nextInt(Customers.size());
+		WebElement cus = dr.findElement(By.xpath(s1+rval+s2));
+		String custext = cus.getText();
+		System.out.println(custext);
+		cus.click();
+		WebDriverWait wait= new WebDriverWait(dr, 10);
+	    WebElement save =dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[3]/div/button[1]"));
+		wait.until(ExpectedConditions.presenceOfElementLocated((By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[3]/div/button[1]"))));
+		save.click();
 		dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		System.out.println("Sales Order is created succefully");
 	  
@@ -65,26 +75,23 @@ public class CRUD {
 		  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[1]/button[3]")).click();
 		  /*dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);*/
 		  dr.findElement(By.xpath(".//*[@id='s2id_autogen5']")).click();
+		  TimeUnit.SECONDS.sleep(5);
 		  List<WebElement> PartNumber = dr.findElements(By.className("select2-results"));
 		  String s1="html/body/div[5]/ul/li[";
 		  String s2="]/div";
 		  int Size=PartNumber.size();
 		  Random rand = new Random(System.currentTimeMillis());
 		  int rval = rand.nextInt(Size);
-		  TimeUnit.SECONDS.sleep(5);
+		  TimeUnit.SECONDS.sleep(3);
 		  dr.findElement(By.xpath(s1+rval+s2)).click();
-		  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[6]/div[1]/div/div/div[2]/div/div[1]/span/a[1]")).click();
+		  dr.findElement(By.xpath(".//*[@id='MainWrapper']/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[6]/div[1]/div/div/div[2]/div/div[1]/span/a[1]")).click();
 		  dr.switchTo().frame(0);
-		  dr.findElement(By.xpath("html/body/div/form/div[2]/div[2]/div[2]/ul/li[1]/span/div/a/span[1]")).click();
-		  dr.findElement(By.xpath("html/body/div[3]/ul/li[1]/div")).click();
-		  dr.findElement(By.xpath(".//button[@class='btn btn-sm btn-default']")).click();
 		  dr.findElement(By.xpath("html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/a")).click();
-		  TimeUnit.SECONDS.sleep(5);
 		  dr.findElement(By.xpath(".//input[1][@id='Quantity']")).sendKeys("10");
 		  dr.findElement(By.xpath(".//input[1][@id='List_Price']")).sendKeys("100");
 		  dr.findElement(By.xpath(".//input[1][@id='Shipping_Charges']")).sendKeys("12");
 		  dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
-		  WebElement orderno = dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[1]/a"));
+		  WebElement orderno = dr.findElement(By.xpath(".//*[@id='MainWrapper']/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[1]/div/div/div[2]/div/div[1]/a"));
 			str =orderno.getText();
 			System.out.println("Created Sales order is :"+str);
 		 
@@ -113,7 +120,7 @@ public class CRUD {
 	  	}else{
 		  System.out.print("Searching is done with the newly created Sales order\n");
 	  	}
-	  	dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	  	
 	  	}catch (Exception e){
 		  throw e;
 	  }
@@ -124,17 +131,20 @@ public class CRUD {
 	  try {
 	  System.out.println("------------------------------------------------");
 	  System.out.println("Scenario 4: Editing the newly added Sales Order");
+	  dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  WebDriverWait wait = new WebDriverWait(dr,20);
 	  wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[2]/i")));
 	  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr/td[1]/div[2]/a[2]/i")).click();
-	  dr.findElement(By.xpath("html/body/div[2]/div/div[1]/div[1]/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[5]/div[1]/div/div/div[2]/div/div[1]/span/div/a")).click();
-	  dr.findElement(By.xpath("html/body/div[5]/div/input")).sendKeys("Adult Training Bikes");
-	  dr.findElement(By.xpath("html/body/div[5]/ul/li/div/span")).click();
-	  dr.findElement(By.xpath(".//span[@id='select2-chosen-10']")).click();
-	  dr.findElement(By.xpath("html/body/div[6]/div/input")).sendKeys("30 - Net 30 Days");
-	  TimeUnit.SECONDS.sleep(3);
-	  dr.findElement(By.xpath("html/body/div[6]/ul/li/div/span")).click();
-	  dr.findElement(By.xpath(".//button[@class='btn btn-xs btn-success']")).click();
+	  WebElement h1=dr.findElement(By.xpath(".//*[@id='MainWrapper']/div/form/div[2]/div/div/fieldset[1]/div/div/div/div[1]/div[2]/div/div/div[2]/div/div[1]/span/a[1]"));
+		Actions act = new Actions(dr);
+		act.click(h1).perform();
+		dr.switchTo().frame(0);
+		TimeUnit.SECONDS.sleep(4);
+		dr.findElement(By.xpath("html/body/div[1]/form/div[2]/div[2]/div[3]/div[2]/div/table/tbody/tr[5]/td[1]/a")).click();
+		WebDriverWait wait1= new WebDriverWait(dr, 10);
+	    WebElement save =dr.findElement(By.xpath(".//*[@id='MainWrapper']/div/form/div[1]/button[1]"));
+		wait1.until(ExpectedConditions.presenceOfElementLocated((By.xpath(".//*[@id='MainWrapper']/div/form/div[1]/button[1]"))));
+		save.click();
 	  System.out.println("Editing done successfully");
 	  dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);}
 	  catch(Exception e){
@@ -179,7 +189,7 @@ public class CRUD {
   }
   getScreenShot();
   }
-  @Test (enabled=true,groups = "Mygroup_2", priority = 6)
+  @Test (enabled=false,groups = "Mygroup_2", priority = 6)
   public static void SaleOrderACK() throws InterruptedException, IOException {
 	  System.out.println("------------------------------------------------");
 	  System.out.println("Scenario 7: Sales order Acknowledgement");
@@ -201,7 +211,7 @@ public class CRUD {
 		dr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		getScreenShot();
  	  	}
-  @Test (enabled=true,groups = "Mygroup_2", priority=7)
+  @Test (enabled=false,groups = "Mygroup_2", priority=7)
   public void SalesOrderListing() throws InterruptedException, AWTException, IOException {
 	  System.out.println("------------------------------------------------");
 	  System.out.println("Scenario 8: Sales order Listing");
@@ -249,7 +259,7 @@ public class CRUD {
 
   @AfterTest
   public void afterTest() {
-	  dr.quit();
+ dr.quit();
   }
 
 }

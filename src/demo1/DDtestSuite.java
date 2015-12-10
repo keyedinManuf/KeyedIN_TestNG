@@ -16,7 +16,7 @@ public class DDtestSuite {
 	
 	public static void main(String[] args) throws Exception{
 		
-		DDwithPOI.SetExcelPath("C:\\Users\\sakthivel\\Documents\\testdata\\Datadriven.xlsx", "Sheet2");
+		DDwithPOI.SetExcelPath("C:\\Users\\sakthivel\\Documents\\testdata\\Datadriven.xlsx", "Sheet1");
 		dr.get("http://kimdev01.keyedinuat.com/Dev03/User/SignIn");
 		dr.manage().window().maximize();
 		dr.findElement(By.xpath(".//input[@name='username']")).sendKeys("lizc-admin");
